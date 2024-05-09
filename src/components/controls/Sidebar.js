@@ -1,9 +1,7 @@
 import { useState } from "react"
-import { SidebarTabs } from "../../utilities/SidebarTabs";
 
-export default function Sidebar({ name }) {
+export default function Sidebar({tabs, name,onTabChange }) {
     const [isOpen, setIsOpen] = useState(false);
-    const tabs = SidebarTabs;
     // console.log(name,headers);
 
     const toggleSidebar = () => {
@@ -92,7 +90,7 @@ export default function Sidebar({ name }) {
                                 <h5 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-200">{x?.category}</h5>
                                 <ul className="ms-0.5 space-y-2 border-s-2 border-slate-100 dark:border-slate-800">
                                     {x?.list?.map((item, inx) => (
-                                        <li key={`head_sub_${inx}`}  onClick={toggleSidebar}><a className={`block ${item?.name == name ? 'border-slate-400':' border-transparent'} py-1 ps-4 -ms-px border-s-2 text-sm text-slate-700 hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300`} href={`/docs/${item?.route}`}>{item?.name}</a></li>
+                                        <li key={`head_sub_${inx}`}  onClick={toggleSidebar}><span className={`block ${item?.name == name ? 'border-slate-400':' border-transparent'} py-1 ps-4 -ms-px border-s-2 text-sm text-slate-700 hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300`} onClick={()=>{onTabChange(item?.route)}}>{item?.name}</span></li>
                                     ))}
                                 </ul>
                             </li>
