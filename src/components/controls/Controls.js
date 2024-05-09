@@ -12,7 +12,7 @@ export default function Controls() {
     const allTabs = sidebarTabs.reduce((acc, category) => acc.concat(category.list), []);
     const record = allTabs.find(tab => tab.route === route);
     // console.log(record)
-    setData(record?.html);
+    setData(record);
   }
   return (
     <div>
@@ -23,7 +23,7 @@ export default function Controls() {
             <Sidebar tabs={sidebarTabs} name={data?.route} onTabChange={handleTabChange} />
           </div>
           <div className='col-span-3 p-5 ms-5'>
-            <Main data={data} />
+            <Main data={data?.html} />
           </div>
         </div>
       </main>
