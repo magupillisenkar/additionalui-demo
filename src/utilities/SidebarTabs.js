@@ -24,7 +24,7 @@ export const SidebarTabs = [
     {
         category: 'Basic Forms',
         list: [
-            { id: 1, route:'input', name: 'Input', html: `` },
+            { id: 1, route:'input', name: 'Input', html: `` }, 
             { id: 2, route:'input-group', name: 'Input Group', html: `` },
             { id: 3, route:'textarea', name: 'Textarea', html: `` },
             { id: 4, route:'file-input', name: 'File Input', html: `` },
