@@ -6,7 +6,7 @@ import { SidebarTabs } from '../../utilities/SidebarTabs'
 
 export default function Controls() {
   const sidebarTabs = SidebarTabs;
-  const [data, setData] = useState({ route: 'accordion', html: '<div className="text-center text-2xl">No Data</div>' });
+  const [data, setData] = useState({ route: 'accordion', html: [{htmlcode:'<div className="text-center text-2xl">No Data</div>'}] });
   const handleTabChange = (route) => {
     console.log(route)
     const allTabs = sidebarTabs.reduce((acc, category) => acc.concat(category.list), []);
