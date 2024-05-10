@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../home/Navbar'
 import Sidebar from './Sidebar'
 import Main from './Main'
@@ -14,6 +14,9 @@ export default function Controls() {
     // console.log(record)
     setData(record);
   }
+  useEffect(() => {
+    handleTabChange('accordion');
+  }, [])
   return (
     <div>
       <Navbar />
